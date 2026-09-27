@@ -1,0 +1,1 @@
+<?php get_header();?><main class="wrap site-main"><h1>Page not found</h1><p>Try our <a href="<?php echo esc_url(get_post_type_archive_link('cad_car'));?>">used car inventory</a>.</p></main><?php get_footer();

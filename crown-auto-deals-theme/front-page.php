@@ -1,0 +1,2 @@
+<?php
+get_header();?><main class="site-main"><section class="hero"><div class="wrap"><h1>Quality used cars, trusted service</h1><p>Browse inspected vehicles and buy with confidence.</p><a class="button" href="<?php echo esc_url(get_post_type_archive_link('cad_car'));?>">Browse inventory</a></div></section><section class="wrap"><h2>Featured vehicles</h2><?php echo do_shortcode('[cad_featured_cars]');?></section></main><?php get_footer();

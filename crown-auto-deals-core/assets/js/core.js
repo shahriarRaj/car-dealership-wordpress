@@ -1,0 +1,1 @@
+document.addEventListener('click',function(e){if(e.target.matches('[data-gallery-next]')){const g=e.target.closest('[data-gallery]');const imgs=g.querySelectorAll('img');let i=[...imgs].findIndex(x=>!x.hidden);imgs[i].hidden=true;imgs[(i+1)%imgs.length].hidden=false;}});

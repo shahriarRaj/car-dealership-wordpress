@@ -1,0 +1,4 @@
+<?php
+if (!defined('ABSPATH')) exit;
+add_action('admin_menu',function(){add_submenu_page('edit.php?post_type=cad_transaction','Sales paperwork','Sales paperwork','manage_options','cad-sales-help',function(){echo '<div class="wrap"><h1>Sales paperwork</h1><p>Create a Transaction for each sale, assign the customer user ID and add invoice/warranty URLs. Customers see only documents assigned to their account.</p><p>For privacy, store files in protected storage or a private media workflow rather than public URLs.</p></div>';});});
+add_filter('manage_cad_transaction_posts_columns',function($cols){$cols['cad_customer']='Customer';$cols['cad_car']='Vehicle';return $cols;});add_action('manage_cad_transaction_posts_custom_column',function($col,$id){if($col==='cad_customer')echo esc_html(get_user_by('id',get_post_meta($id,'_cad_customer',true))->user_email??'');if($col==='cad_car')echo esc_html(get_the_title(get_post_meta($id,'_cad_car',true)));},10,2);
